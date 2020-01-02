@@ -1,0 +1,13 @@
+将网站发布到IIS，访问发生如下错误：
+
+HTTP 错误 500.21 - Internal Server Error处理程序“PageHandlerFactory-Integr”在其模块列表中有一个错误模块“ManagedPipelineHandler”
+
+
+
+原因：在安装Framework v4.0之后，再启用IIS，导致Framework没有完全安装
+
+解决：开始->所有程序->附件->右键点击“命令提示符”->以管理员身份运行->输入“%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe -i”命令行。
+
+ 
+
+如果还不行，可检查IIS的应用程序池，是否使用集成模式，如果不是则改成集成模式
